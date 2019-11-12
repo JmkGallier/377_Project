@@ -47,11 +47,7 @@
       console.log('fetch'); // confirm code is running on click
       fetch('/api')
               .then(res => res.json())
-              .then(res => {
-                populateList(res.data, "#course-list");
-                console.log(res);
-              }
-              );
+              .then(res => console.log(res));
     }
   </script>
 </body>
