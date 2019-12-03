@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('src/public'));
 
-function dbInit(data) {
+async function dbInit(data) {
 
     let db = new sqlite3.Database("./pgCountySpending.db", (err) => {
         if (err) {
@@ -35,10 +35,10 @@ function dbInit(data) {
             console.log(i, data.data[i][8], data.data[i][9], data.data[i][10], data.data[i][11], data.data[i][12]);
             stmt.run(data.data[i][8], data.data[i][9], data.data[i][10], data.data[i][11], data.data[i][12])
         }
-        stmt.finalize(readSumZipsele)
+        stmt.finalize(readSumZip)
     };
 
-    function readSumZip() {
+    async function readSumZip() {
         let sql = 'SELECT zip, sum(amount) FROM spendingDB GROUP BY zip ';
         db.all(sql, function(err, rows) {
             rows.forEach(function (row) {
