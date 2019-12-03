@@ -32,7 +32,7 @@ async function dbInit(data) {
         let stmt = db.prepare(`INSERT INTO spendingDB(payee, agency, zip, amount, description) VALUES (?, ?, ?, ?, ?)`);
 
         for (let i=0; i < data.data.length; i++ ) {
-            console.log(i, data.data[i][8], data.data[i][9], data.data[i][10], data.data[i][11], data.data[i][12]);
+            // console.log(i, data.data[i][8], data.data[i][9], data.data[i][10], data.data[i][11], data.data[i][12]);
             stmt.run(data.data[i][8], data.data[i][9], data.data[i][10], data.data[i][11], data.data[i][12])
         }
         stmt.finalize(readSumZip)
