@@ -23,45 +23,8 @@
     </div>
   </div>
   <script>
-    function loadData() {
-      console.log('fetch'); // confirm code is running on click
-      fetch('/api')
-        .then(res => res.json())
-        .then(res => {
-          console.log(res); // logging step to check what we got
-          return res;
-        })
-        .then(res => res.data.map(c => c))
-        .then(res =>{
-
-          const content = document.querySelector(".content");
-          content.innerHTML = "";
-          let main_list = document.createElement("ol");
-
-          bb = [];
-      
     
-          for(i=0; i<res.length; i+=1){
-          //for (i of res){
-            //console.log(i);
-            
-            let item = document.createElement("li");
-            item.innerText = res[i];
-            main_list.appendChild(item);
-            bb[i] = res[i];
-            console.log(item);
-            
-          
-          }
 
-          console.log(main_list);
-          content.appendChild(main_list);
-          return content;
-
-        })
-
-        //.then(codes => document.querySelector(".content").innerText = codes);
-    }
   </script>
 </body>
 
