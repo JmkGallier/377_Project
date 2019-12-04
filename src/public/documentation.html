@@ -1,42 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<title>PG County Spending Information for FY 2018</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="scripts.js"></script>
 
-<head>
-  <title>Test AJAX page</title>
-  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
-</head>
 
-<body>
-        <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="documentation.html">Documentation</a></li>
-              </ul>
-  <div class="container">
-    <div class="wrapper">
-      <div class="header">Documentation</div>
-      <button class="button" onclick="loadData()">Load Some JSON from a server</button>
-      <div class="content">
-        <p>
-            Our group hopes to solve the information problem of displaying how Prince George’s County 
-            spends their fiscal year budget. Currently, there is only a dataset that will display this 
-            information. While accuracy is not the issue, understanding the significance of a lot of the 
-            information is an issue. We hope to find a better way of displaying this information so that 
-            the people of Prince George’s County can understand and see where spending is allocated to and 
-            hopefully help future adjustments and changes. Additionally, we hope this will encourage more 
-            specific data entry in the future. Information about the spending currently is very vague, and 
-            we hope that providing a new way to display spending will encourage better data entry so that it 
-            can be better understood and defended if necessary.
-        </p>
-      </div>
-      <div class="footer"></div>
-    </div>
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+
+
+
+
+
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner-->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Seal_of_Prince_George%27s_County%2C_Maryland.svg" style="width:100%">
+
+
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="documentation.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>DOCUMENT</p>
+  </a>
+
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="about.html" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="documentation.html" class="w3-bar-item w3-button" style="width:25% !important">DOCUMENT</a>
   </div>
-  <script>
-    function loadData() {
+</div>
 
-    }
-  </script>
+
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">Documentation</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m
+    </p>
+
+
+  <!-- End Portfolio Section -->
+  </div>
+
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
 </body>
-
 </html>
