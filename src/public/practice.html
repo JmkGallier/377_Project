@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<script src="scripts.js"></script>
 
 
 
@@ -29,7 +29,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner 
+  <!-- Avatar image in top left corner
   <img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
 
 
@@ -67,13 +67,25 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">INST 377</span> Final Project</h1>
     <p>Load Data Here</p>
+
+<!-- The box to load data -->
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">API Loader</div>
+        <button class="button" onclick="loadData()">Load Some JSON from a server</button>
+        <div class="content"></div>
+        <div class="footer"></div>
+      </div>
+    </div>
+
+
   </header>
 
 
 
 
 
-  <!-- About Section 
+  <!-- About Section
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">-->
   <div class="w3-padding-64 w3-content" id="about">
     <h2 class="w3-text-light-grey">About</h2>
@@ -86,10 +98,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m
     </p>
 
-    
+
 
   </div>
-  
+
   <!-- Portfolio Section -->
   <div class="w3-padding-64 w3-content" id="photos">
     <h2 class="w3-text-light-grey">Documentation</h2>
@@ -102,10 +114,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore m
     </p>
 
- 
+
   <!-- End Portfolio Section -->
   </div>
-  
+
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -114,7 +126,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    
+
   <!-- End footer -->
   </footer>
 
