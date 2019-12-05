@@ -8,6 +8,136 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="scripts.js"></script>
 
+<script>
+window.onload = function () {
+
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+  animationEnabled: true,
+  theme: "light2", // "light1", "light2", "dark1", "dark2"
+  title: {
+    text: "Prince Geogre's County Fiascal Spending: POLICE"
+  },
+  subtitles: [{
+    text: "Over $300,000",
+    fontSize: 16
+  }],
+  axisY: {
+    prefix: "$",
+    scaleBreaks: {
+      customBreaks: [{
+        startValue: 1000,
+        endValue: 7000
+      }]
+    }
+  },
+  data: [{
+    type: "column",
+    yValueFormatString: "$#,##0.00",
+    dataPoints: [
+
+
+      { label: "CONSTRUCTION", y: 1666142.34},
+      { label: "DESIGN", y: 6904309.13},
+
+
+      { label: "OFFICE SPACE & BUILDING RENT/LEASE", y: 395327.58},
+
+
+
+      { label: "OTHER EQUIPMENT", y: 1276524.32},
+      { label: "OTHER EQUIPMENT RENTAL/LEASE", y: 1581817.08},
+      { label: "OTHER GENERAL AND ADMINISTRATIVE CONTRACT SERVICES", y: 1139457.46},
+
+
+      { label: "OTHER OPERATING  EQUIPMENT NON-CAPITAL", y: 1367907.14},
+
+
+      { label: "OTHER OPERATING CONTRACT SERVICES", y: 793130.850000001},
+
+      { label: "OTHER OPERATING SUPPLIES", y: 1500043.95},
+
+
+      { label: "TELEPHONE - REGULAR SERVICE", y: 625950.69},
+      { label: "TELEPHONE - WIRELESS/CELL PHONE CHARGES", y: 671043.17},
+
+      { label: "OTHERS", y: 1367311.7},
+
+    ]
+  }]
+});
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+  animationEnabled: true,
+  theme: "light2", // "light1", "light2", "dark1", "dark2"
+  title: {
+    text: "Prince Geogre's County Fiascal Spending: POLICE"
+  },
+  subtitles: [{
+    text: "Others, under $300,000",
+    fontSize: 16
+  }],
+  axisY: {
+    prefix: "$",
+    scaleBreaks: {
+      customBreaks: [{
+        startValue: 1000,
+        endValue: 7000
+      }]
+    }
+  },
+  data: [{
+    type: "column",
+    yValueFormatString: "$#,##0.00",
+    dataPoints: [
+
+      { label: "CNN-CABLE", y: 6293.06},
+      { label: "CONFERENCE & SEMINAR FEES", y: 1152.11},
+
+      { label: "FOOD", y: 5053.61},
+      { label: "GAS AND OIL-SUMMARY", y: 48878.06},
+      { label: "INTEREST EXPENSE", y: 236050},
+      { label: "LAW ENFORCEMENT EQUIPMENT", y: 11000},
+      { label: "LICENSES TAGS & FORMS", y: 16060},
+      { label: "Loss-inventory differences", y: 339.99},
+      { label: "MEMBERSHIPS", y: 75},
+      { label: "OFFICE AND OPERATING SUPPLIES", y: 2482.83},
+
+      { label: "OTHER ADVERTISING COSTS", y: 2250},
+      { label: "OTHER BOOKS PERIODICALS REFERENCE MATERIALS", y: 8905},
+      { label: "OTHER DISPOSAL FEES", y: 4410},
+
+
+
+      { label: "OTHER INSURANCE PREMIUMS", y: 93302.3},
+      { label: "OTHER MEMBERSHIP COSTS", y: 19920},
+      { label: "OTHER NON-DEFINED PROJECT COSTS", y: 242400},
+
+
+
+      { label: "OTHER PRINTING  AND REPRODUCTION", y: 4639.5},
+      { label: "OTHER TRAINING COSTS", y: 54417.94},
+      { label: "PROCUREMENT CARD PURCHASE", y: 4513.52},
+      { label: "PROFESSIONAL SERVICE - AUDIT", y: 3000},
+      { label: "SOFTWARE NON-CAPITAL", y: 64401},
+      { label: "TELEPHONE - 911", y: 1002.45},
+      { label: "TELEPHONE - LONG DISTANCE", y: 5759.35},
+      { label: "TELEPHONE - OTHER", y: 263885.18},
+
+      { label: "TEMPORARY CLERICAL/ADMININSTRATIVE PERSONNEL", y: 114795.07},
+      { label: "TOWING CONTRACT", y: 114114},
+      { label: "TRAINING-TRAVEL & LODGING", y: 3283.68},
+      { label: "TRAVEL & LODGING - NON TRAINING", y: 5460},
+      { label: "UTILITIES - ELECTRICITY", y: 5683.89},
+      { label: "UTILITIES - OTHER", y: 23784.16 }
+    ]
+  }]
+});
+chart1.render();
+chart2.render();
+
+}
+</script>
+
+
 
 
 
@@ -75,7 +205,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <form id="tableForm" action="/sqlQuery" method="get">
     <select class="selectpicker" data-style="btn-info" name="selectpicker">
         <optgroup label="Select Agency">
-            <option name="" value="0">Select Agency</option>
+            <option name="" value="0">POLICE</option>
             <option name="ENVIRONMENT" value="ENVIRONMENT">ENVIRONMENT</option>
             <option name="PUBLIC WORKS & TRANSPORTATION" value="PUBLIC WORKS & TRANSPORTATION">PUBLIC WORKS & TRANSPORTATION</option>
             <option name="CORRECTIONS" value="CORRECTIONS">CORRECTIONS</option>
@@ -98,7 +228,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
             <option name="HEALTH" value="HEALTH">HEALTH</option>
         </optgroup>
     </select>
-    <!--<input type="submit" />-->
+    <!--<input type="submit" /> -->
 
     <button onclick="location.href='graph.html'" type="button">Load</button>
 
@@ -112,7 +242,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
   </header>
 
+  <div id="chartContainer1" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
 
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<br>
+
+  <div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
 
