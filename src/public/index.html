@@ -7,128 +7,168 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="scripts.js"></script>
-
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {
+        width: 120px;
+        background: #222;
+    }
+
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {
+        margin-left: 120px
+    }
+
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0
+        }
+    }
 </style>
-
-
-
 
 
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner-->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Seal_of_Prince_George%27s_County%2C_Maryland.svg" style="width:100%">
+    <!-- Avatar image in top left corner-->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Seal_of_Prince_George%27s_County%2C_Maryland.svg"
+         style="width:100%">
 
 
-  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="documentation.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>DOCUMENT</p>
-  </a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+    </a>
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+    </a>
+    <a href="documentation.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>DOCUMENT</p>
+    </a>
 
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="about.html" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="documentation.html" class="w3-bar-item w3-button" style="width:25% !important">DOCUMENT</a>
-  </div>
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+        <a href="about.html" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+        <a href="documentation.html" class="w3-bar-item w3-button" style="width:25% !important">DOCUMENT</a>
+    </div>
 </div>
-
-
-
-
 
 <!-- Page Content -->
 <div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">INST 377</span> Final Project</h1>
-    <p>Load Data Here</p>
+    <!-- Header/Home -->
+    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <h1 class="w3-jumbo"><span class="w3-hide-small">INST 377</span> Final Project</h1>
 
-<!-- The box to load data -->
-    <div class="container">
-      <div class="wrapper">
-        <div class="header">API Loader</div>
-        <button class="button" onclick="loadData()">Load Some JSON from a server</button>
-        <div class="content"></div>
-        <div class="footer"></div>
-      </div>
-    </div>
+        <!-- The box to load data -->
+
+        <div class="container">
+            <form id="tableForm">
+                <select class="selectpicker" data-style="btn-info" name="selectpicker">
+                    <optgroup label="Select Agency">
+                        <option name="" value="0">Select Agency</option>
+                        <option name="ENVIRONMENT" value="ENVIRONMENT">ENVIRONMENT</option>
+                        <option name="PUBLIC WORKS & TRANSPORTATION" value="PUBLIC WORKS & TRANSPORTATION">PUBLIC WORKS
+                            & TRANSPORTATION
+                        </option>
+                        <option name="CORRECTIONS" value="CORRECTIONS">CORRECTIONS</option>
+                        <option name="INFORMATION TECHNOLOGY" value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY
+                        </option>
+                        <option name="POLICE" value="POLICE">POLICE</option>
+                        <option name="HUMAN RESOURCES" value="HUMAN RESOURCES">HUMAN RESOURCES</option>
+                        <option name="CENTRAL SERVICES" value="CENTRAL SERVICES">CENTRAL SERVICES</option>
+                        <option name="FIRE/EMS" value="FIRE/EMS">FIRE/EMS</option>
+                        <option name="FAMILY SERVICES" value="FAMILY SERVICES">FAMILY SERVICES</option>
+                        <option name="SHERIFF" value="SHERIFF">SHERIFF</option>
+                        <option name="HOUSING" value="HOUSING">HOUSING</option>
+                        <option name="PERMITTING, INSPECTIONS & ENFORCEMENT"
+                                value="PERMITTING, INSPECTIONS & ENFORCEMENT">PERMITTING, INSPECTIONS & ENFORCEMENT
+                        </option>
+                        <option name="NON-DEPARTMENTAL" value="NON-DEPARTMENTAL">NON-DEPARTMENTAL</option>
+                        <option name="EDUCATION" value="EDUCATION">EDUCATION</option>
+                        <option name="SOCIAL SERVICES" value="SOCIAL SERVICES">SOCIAL SERVICES</option>
+                        <option name="COUNTY COUNCIL" value="COUNTY COUNCIL">COUNTY COUNCIL</option>
+                        <option name="CIRCUIT COURT" value="CIRCUIT COURT">CIRCUIT COURT</option>
+                        <option name="HOMELAND SECURITY" value="HOMELAND SECURITY">HOMELAND SECURITY</option>
+                        <option name="FINANCE" value="FINANCE">FINANCE</option>
+                        <option name="HEALTH" value="HEALTH">HEALTH</option>
+                    </optgroup>
+                </select>
+                <input type="submit"/>
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="wrapper">
+                <div class="header"></div>
+                <!--        <button class="button" onclick="loadHist()">Load Some JSON from a server</button>-->
+                <div class="content" id="content">Load Data Here</div>
+                <div class="footer"></div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            window.addEventListener("DOMContentLoaded", jsInit);
+
+            function jsInit() {
+                let frm = document.getElementById("tableForm");
+                frm.addEventListener("submit", queryFunc);
+
+                function queryFunc(event) {
+                    event.preventDefault();
+                    let query_param = event.target[0].value;
+
+                    fetch(`/sqlQuery`, {
+                        method: "post",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            param: query_param
+                        })
+                    })
+                        .then(res => res.json())
+                        .then(res => loadHist(res.data))
+                }
+            }
+        </script>
 
 
-    <form id="tableForm" action="/sqlQuery" method="get">
-    <select class="selectpicker" data-style="btn-info" name="selectpicker">
-        <optgroup label="Select Agency">
-            <option name="" value="0">Select Agency</option>
-            <option name="ENVIRONMENT" value="ENVIRONMENT">ENVIRONMENT</option>
-            <option name="PUBLIC WORKS & TRANSPORTATION" value="PUBLIC WORKS & TRANSPORTATION">PUBLIC WORKS & TRANSPORTATION</option>
-            <option name="CORRECTIONS" value="CORRECTIONS">CORRECTIONS</option>
-            <option name="INFORMATION TECHNOLOGY" value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
-            <option name="POLICE" value="POLICE">POLICE</option>
-            <option name="HUMAN RESOURCES" value="HUMAN RESOURCES">HUMAN RESOURCES</option>
-            <option name="CENTRAL SERVICES" value="CENTRAL SERVICES">CENTRAL SERVICES</option>
-            <option name="FIRE/EMS" value="FIRE/EMS">FIRE/EMS</option>
-            <option name="FAMILY SERVICES" value="FAMILY SERVICES">FAMILY SERVICES</option>
-            <option name="SHERIFF" value="SHERIFF">SHERIFF</option>
-            <option name="HOUSING" value="HOUSING">HOUSING</option>
-            <option name="PERMITTING, INSPECTIONS & ENFORCEMENT" value="PERMITTING, INSPECTIONS & ENFORCEMENT">PERMITTING, INSPECTIONS & ENFORCEMENT</option>
-            <option name="NON-DEPARTMENTAL" value="NON-DEPARTMENTAL">NON-DEPARTMENTAL</option>
-            <option name="EDUCATION" value="EDUCATION">EDUCATION</option>
-            <option name="SOCIAL SERVICES" value="SOCIAL SERVICES">SOCIAL SERVICES</option>
-            <option name="COUNTY COUNCIL" value="COUNTY COUNCIL">COUNTY COUNCIL</option>
-            <option name="CIRCUIT COURT" value="CIRCUIT COURT">CIRCUIT COURT</option>
-            <option name="HOMELAND SECURITY" value="HOMELAND SECURITY">HOMELAND SECURITY</option>
-            <option name="FINANCE" value="FINANCE">FINANCE</option>
-            <option name="HEALTH" value="HEALTH">HEALTH</option>
-        </optgroup>
-    </select>
-    <input type="submit" />
- ``</form>
-
-
-  </header>
-
-
-
-
-
+    </header>
 
     <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
 
-  <!-- End footer -->
-  </footer>
+        <!-- End footer -->
+    </footer>
 
-<!-- END PAGE CONTENT -->
+    <!-- END PAGE CONTENT -->
 </div>
 
 </body>
