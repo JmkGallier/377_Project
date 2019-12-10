@@ -47,10 +47,10 @@ github account and link the service to it.
 
 ##### Running from a local machine or server.
 1. Before launching the application, use a terminal to navigate to the directory containing the application files (this should be the 
-directory that you installed the software requirements to). If you are using a NIX based system (MacOS, Linux, Powershell)
-this can be done with the 'cd' and 'ls' bash commands.    
+directory that you installed the software requirements to). If you are using a NIX based system (MacOS, Linux, 
+PowerShell) this can be done with the 'cd' and 'ls' bash commands.    
     ```bash
-    cd Downloads/Path_to_Server_Directory/
+    cd Path_to/Server_Directory/
     ```    
     ```bash
     ls ## Returns content of the current directory
@@ -70,7 +70,6 @@ this can be done with the 'cd' and 'ls' bash commands.
     localhost:5000
     ```
 
-
 #### API Endpoints
 
 ##### 1. Get
@@ -85,6 +84,26 @@ is created by taking the the 'param' value from the 'body' object from within th
 as an argument in a JavaScript function that queries the SQLite3 database for all amounts billed and descriptions 
 the bills. This data is then returned to the frontend.
 
-#### Expected Bugs
-Get request time/promise issue
-Post issue gets data but cannot return data from a promise
+#### Known Bugs
+##### Database Initialization
+When the get request is called to populate the local database, the function completes, but this does not mean the
+database has been fully populated. While the function may have completed, the SQL insertions are still happening in
+backend and will not allow queries until it has completed. This means updating the database must be done manually. Also,
+the database requires a minimum of 7 minutes to reached the target 54,038 rows. If you wish to create a fresh SQLite 
+database, it is recommended to run the function from the backend and then query the server with the following:
+
+1. First navigate to the build directory:
+    ```bash
+    cd Path_to/Server_directory/build/
+    ls ## Confirm that pgCountSpending.db is here
+    ```
+
+2. Access the database with sqlite3:
+    ```bash
+   sqlite3 pgCountySpending.db 
+   ```
+
+3. Query the table and confirm there are 54,038 rows:
+    ```sql
+    SELECT count(*) FROM spendingDB;
+    ```
