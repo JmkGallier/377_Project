@@ -63,19 +63,32 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-padding-64 w3-content" id="photos">
     <h2 class="w3-text-light-grey">Documentation</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>The proposed system solves this informational problem because it gives the stakeholders a platform where they can access Prince George’s County spending data for the year 2018. We believe this will have a big impact of the shareholders because the shareholders are tax payers and are interested to see where their money is being spent. This will also help shareholders conduct research to help optimize the spending budget of Prince George’s County.
-Explain which API you've chosen to work with, and why (what's your information problem)?
-We chose to work with the “Spending Information for FY 2018” API. The reason why we chose to work with this API is because many ordinary shareholders will not access this data because they don’t know how to. By creating a simple platform for them, they will be better educated and help optimize the Prince George’s County budget.
-PG County Finance/Budget Spending Information FY2018 API Link:
-https://data.princegeorgescountymd.gov/Finance-and-Budget/Spending-Information-for-FY-2018/2qma-7ez9/data
-
-A description of the front-end technology you expect to use to make your application
-Our web application will use HTML, CSS, and JavaScript to structure the webpage and visualize the data. JavaScript will also be used
-Presentation Proposal
-We will be approaching dataset visualization in two ways by visualizing county-wide expenditure per agency and agency expenditure per zip code.
-Expenditure per agency will be done by using a Voronoi Treemap which can be thought of as a pie chart with minor segments within each major segment. Each major segment will illustrate an agency by relative expenditure amount with the description of the payment making up the subdivisions of each agency, illustrating expenditure by size.
-
+    <h3 class="w3-text-light-grey">Software requirements for local instances</h3>
+    <p>NOTE: These dependencies should be installed while in the application directory with npm. 
+      (If you plan to run the application of a third-party service, see the host service documentation).
     </p>
+    <ul>
+      <li>sqlite3</li>
+      <li>express</li>
+      <li>node_fetch</li>
+    </ul>
+    <h3 class="w3-text-light-grey">Installation and running the server</h3>
+    <p>Before installing fork/download this repository to the directory you wish 
+      to run the application from. If you use a service that deploys from a github 
+      repository, please create a fork in your own github account and link the service to it.    
+    </p>    
+    <h3 class="w3-text-light-grey">Running from a local machine or server</h3>
+    <p>Before launching the application, use a terminal to navigate to the directory 
+      containing the application files (this should be the directory that you installed 
+      the software requirements to). If you are using a NIX based system (MacOS, Linux, PowerShell) 
+      this can be done with the 'cd' and 'ls' bash commands.
+    </p>
+    <ul>
+      <li>cd Path_to/Server_Directory/</li>
+      <li>ls ## Returns content of the current directory</li>
+    </ul>
+    
+ 
 
 
   <!-- End Portfolio Section -->
