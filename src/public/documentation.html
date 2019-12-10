@@ -87,6 +87,57 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <li>cd Path_to/Server_Directory/</li>
       <li>ls ## Returns content of the current directory</li>
     </ul>
+    <p>After making sure you are in the correct which contains the 'package.json' file, enter the following command:
+    </p>
+    <ul>
+      <li>npm install</li>
+    </ul>
+    <p>In the terminal, confirm that a directory titled 'node-modules' was generated. Then start the server with:
+    </p>
+    <ul>
+      <li>npm start</li>
+    </ul>
+    <p>To view your local application, open any browser and enter the following into the address bar:
+    </p>
+    <ul>
+      <li>localhost:5000</li>
+    </ul>
+    <h3 class="w3-text-light-grey">API Endpoints</h3>
+    <dl>
+      <dt>Get</dt>
+      <dd>Our Get request uses a static variable which contains 
+        the URL where we gathered our database items. The request 
+        fetches the content of the page into an array, which is then used 
+        as an argument for our JavaScript Database Initialization function. 
+        This function enters enters all the contents of the database array into 
+        the pgCountySpending database located in the build directory.</dd>
+      <dt>Post</dt>
+      <dd>The Post request is used take the users agency selection, returning it as a 
+        variable to the backend. This variable is created by taking the the 'param' value 
+        from the 'body' object from within the request. This value is then used as an argument 
+        in a JavaScript function that queries the SQLite3 database for all amounts billed and 
+        descriptions the bills. This data is then returned to the frontend.</dd>
+    </dl>  
+    <h3 class="w3-text-light-grey">Database Initialization</h3>
+    <p>When the get request is called to populate the local database, the function completes, 
+      but this does not mean the database has been fully populated. While the function may have 
+      completed, the SQL insertions are still happening in backend and will not allow queries until 
+      it has completed. This means updating the database must be done manually. Also, the database 
+      requires a minimum of 7 minutes to reached the target 54,038 rows. If you wish to create a fresh 
+      SQLite database, it is recommended to run the function from the backend and then query the server 
+      with the following:
+    </p>
+    <dl>
+      <dt>First navigate to the build directory:</dt>
+      <dd>cd Path_to/Server_directory/build/</dd>
+      <dd>ls ## Confirm that pgCountSpending.db is here</dd>
+      <dt>Access the database with sqlite3:</dt>
+      <dd>sqlite3 pgCountySpending.db</dd>
+      <dt>Query the table and confirm there are 54,038 rows:</dt>
+      <dd>SELECT count(*) FROM spendingDB;</dd>
+    </dl> 
+    
+    
     
  
 
