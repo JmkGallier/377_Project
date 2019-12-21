@@ -135,19 +135,7 @@
                 function queryFunc(event) {
                     event.preventDefault();
                     let query_param = event.target[0].value;
-
-                    fetch(`/sqlQuery`, {
-                        method: "post",
-                        headers: {
-                            'Accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            param: query_param
-                        })
-                    })
-                        .then(res => res.json())
-                        .then(res => loadHist(res.data))
+                    fetchSQL(query_param)
                 }
             }
         </script>

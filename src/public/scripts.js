@@ -24,6 +24,25 @@ function loadData() {
 }
 
 
+function thenableReturn_arr(input_var, input_arr) {
+    input_arr.push(input_var)
+}
+
+function fetchSQL(func_param) {
+    fetch(`/sqlQuery`, {
+        method: "post",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            param: func_param
+        })
+    })
+        .then(res => res.json())
+        .then(res => loadHist(res.data))
+}
+
 function loadHist(sql_arr) {
     let chart = new CanvasJS.Chart("content", {
         animationEnabled: true,

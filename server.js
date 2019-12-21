@@ -50,7 +50,6 @@ function readSumZip(agency_param) {
                 return console.error(err.message);
             }
             rows.forEach((row) => {
-                console.log(row);
                 queries.push(row)
             });
             resolve(queries)
@@ -74,6 +73,7 @@ app.get('/api', (req, res) => {
 
 app.post(`/sqlQuery`, (req, res) => {
         let agency_param = req.body.param;
+        console.log(agency_param);
         readSumZip(agency_param)
             .then(queryResult => {
                 res.send({data: queryResult})
